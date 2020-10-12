@@ -69,6 +69,8 @@ html body header .menu-button {
 
 html body header .menu-button h3 {
   text-decoration: none;
+  margin: 0;
+  font-size: 38pt;
 }
 
 html body section {
@@ -100,7 +102,7 @@ html body section #opener-text {
 }
 
 html body section #opener-text h1 {
-  font-size: 18em;
+  font-size: 12em;
   line-height: 0.8;
   font-family: Poiret One;
   font-weight: lighter;
