@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+html {
+  font-size: 16pt;
+  scroll-behavior: smooth;
+  font-family: Poiret One;
+}
+
+html body {
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+html body .strength-color {
+  background: #C0CBFA;
+}
+
+html body .weakness-color {
+  background: #FAE39D;
+}
+
+html body .opportunities-color {
+  background: #87FA9D;
+}
+
+html body .threats-color {
+  background: #FA8EA1;
+}
+
+html body header {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  bottom: 0;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100vw;
+  font-size: 2.5em;
+  font-family: Poiret One;
+  z-index: 5;
+}
+
+html body header .menu-button {
+  width: 25vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: 3px white solid;
+}
+
+html body header .menu-button h3 {
+  text-decoration: none;
+}
+
+html body section {
+  min-height: 90vh;
+  max-height: 90vh;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html body section #opener-text {
+  max-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: space-around;
+}
+
+html body section #opener-text h1 {
+  font-size: 18em;
+  line-height: 0.8;
+  font-family: Poiret One;
+  font-weight: lighter;
+  width: auto;
+  display: inline;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+html body section #opener-text h2 {
+  font-size: 2em;
+  margin-left: 1em;
+}
+
+html body section marquee {
+  font-size: 15vh;
+  margin: 0;
+}
+
+html body #strength {
+  z-index: 0;
+}
+
+html body #weakness {
+  z-index: 1;
+}
+
+html body #opportunities {
+  z-index: 2;
+}
+
+html body #threats {
+  z-index: 3;
+}
+
+html #empty {
+  height: 10vh;
+}
+/*# sourceMappingURL=style.css.map */
