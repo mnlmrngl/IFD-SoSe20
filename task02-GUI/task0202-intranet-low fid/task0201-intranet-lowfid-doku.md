@@ -74,38 +74,29 @@ Nun habe ich das Feedback eingearbeitet und eine Reinzeichnung der Scribbles gem
 
 **Dashboard**
 
-![Scribble 1](img/reinzeichnung-dashboard.jpg)
+![Prototype Dashboard](img/reinzeichnung-dashboard.jpg)
 
-**Menu**
+**Dashboard mit Menü**
 
-<p align="center">
-  <img src="img/reinzeichnung-menu.jpg" height="600"/>
-</p>
+![Prototype Dashboard mit Menü](img/reinzeichnung-menu%20ueber%20dashboard.jpg)
 
-**Studierendenansicht**
-![Scribble 1](img/reinzeichnung-dashboard.jpg)
+**Veranstaltung Studierendenansicht**
 
-<p align="center">
-  <img src="img/reinzeichnung-studi.jpg" height="600"/>
-</p>
+![Prototype Dashboard](img/reinzeichnung-studi.jpg)
 
-**Studierendenansicht**
+**Veranstaltung Lehrendenansicht**
 
-<p align="center">
-  <img src="img/reinzeichnung-dozent dozent.jpg" height="600"/>
-</p>
+![Prototype Veranstaltung Lehrendenansicht](img/reinzeichnung-dozent%20dozent.jpg)
 
-**Studierendenansicht**
+**Veranstaltung Studierendenvorschau für Lehrenden**
 
-<p align="center">
-  <img src="img/reinzeichnung-dozent studi.jpg" height="600"/>
-</p>
+![Prototype Studierendenvorschau%20für%20Lehrenden](img/reinzeichnung-dozent%20studi.jpg)
 
-**Studierendenansicht**
+**Veranstaltung Lehrendenansicht - Aufgabe hinzüfügen**
 
-<p align="center">
-  <img src="img/reinzeichnung-dozent studi.jpg" height="600"/>
-</p>
+![Prototype Veranstaltung Lehrendenansicht](img/reinzeichnung-aufgabe%20hinzufuegen.jpg)
+
+
 
 
 
