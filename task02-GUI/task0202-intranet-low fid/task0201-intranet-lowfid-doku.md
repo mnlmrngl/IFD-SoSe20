@@ -44,7 +44,7 @@
 
 ![Scribble 3](img/scribble03.jpg)
 
-## 3. Ausarebeitung der Besten Version
+## 3. Ausarbeitung der Besten Version
 **Dashboard**
 
 ![Scribble 1](img/ausarbeit-dashboard.jpg)
