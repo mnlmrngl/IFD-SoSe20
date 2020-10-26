@@ -34,28 +34,28 @@
 ## 2. Erste Scribbles
 **Scribble 1**
 
-![Scribble 1](img/scribble01.png)
+![Scribble 1](img/scribble01.jpg)
 
 **Scribble 2**
 
-![Scribble 2](img/scribble02.png)
+![Scribble 2](img/scribble02.jpg)
 
 **Scribble 3**
 
-![Scribble 3](img/scribble03.png)
+![Scribble 3](img/scribble03.jpg)
 
 ## 3. Ausarebeitung der Besten Version
 **Dashboard**
 
-![Scribble 1](img/ausarbeit-dashboard.png)
+![Scribble 1](img/ausarbeit-dashboard.jpg)
 
 **Sudierendenansicht**
 
-![Scribble 1](img/ausarbeit-studi.png)
+![Scribble 1](img/ausarbeit-studi.jpg)
 
 **Lehrendenansicht**
 
-![Scribble 1](img/ausarbeit-dozent.png)
+![Scribble 1](img/ausarbeit-dozent.jpg)
 
 
 ## 4. Feedback
@@ -74,37 +74,37 @@ Nun habe ich das Feedback eingearbeitet und eine Reinzeichnung der Scribbles gem
 
 **Dashboard**
 
-![Scribble 1](img/reinzeichnung-dashboard.png)
+![Scribble 1](img/reinzeichnung-dashboard.jpg)
 
 **Menu**
 
 <p align="center">
-  <img src="img/reinzeichnung-menu.png" height="600"/>
+  <img src="img/reinzeichnung-menu.jpg" height="600"/>
 </p>
 
 **Studierendenansicht**
-![Scribble 1](img/reinzeichnung-dashboard.png)
+![Scribble 1](img/reinzeichnung-dashboard.jpg)
 
 <p align="center">
-  <img src="img/reinzeichnung-studi.png" height="600"/>
-</p>
-
-**Studierendenansicht**
-
-<p align="center">
-  <img src="img/reinzeichnung-dozent dozent.png" height="600"/>
+  <img src="img/reinzeichnung-studi.jpg" height="600"/>
 </p>
 
 **Studierendenansicht**
 
 <p align="center">
-  <img src="img/reinzeichnung-dozent studi.png" height="600"/>
+  <img src="img/reinzeichnung-dozent dozent.jpg" height="600"/>
 </p>
 
 **Studierendenansicht**
 
 <p align="center">
-  <img src="img/reinzeichnung-dozent studi.png" height="600"/>
+  <img src="img/reinzeichnung-dozent studi.jpg" height="600"/>
+</p>
+
+**Studierendenansicht**
+
+<p align="center">
+  <img src="img/reinzeichnung-dozent studi.jpg" height="600"/>
 </p>
 
 
