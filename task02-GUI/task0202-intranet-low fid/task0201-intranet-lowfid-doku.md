@@ -63,7 +63,7 @@ In diesem Schritt habe ich mir Feedback eingeholt, um meine erste Version verbes
 - Menü/Seitenleiste soll nicht immer zu sehen sein
 
 ## 5. Prototyping
-Nun habe ich das Feedback eingearbeitet und eine Reinzeichnung der Scribbles gemacht. Dabei habe ich möglichst viele potenziellen Unterseiten beachtet.
+Im letzten Schritt habe ich das Feedback eingearbeitet und eine Reinzeichnung der Scribbles gemacht. Dabei habe ich möglichst viele potenziellen Unterseiten beachtet.
 
 *Legende*
 - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Klickbarer Text
