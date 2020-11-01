@@ -1,4 +1,5 @@
 # IFD-WiSe20-21
+[task03 - Intranet GUI - high fid](https://github.com/mnlmrngl/IFD-WiSe20-21/blob/master/task03-high%20fid/task033-high%20fid.md)
 
 [task02.2 - Intranet GUI - low fid](https://github.com/mnlmrngl/IFD-WiSe20-21/blob/master/task02-GUI/task0202-intranet-low%20fid/task0201-intranet-lowfid-doku.md)
 
