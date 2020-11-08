@@ -12,7 +12,7 @@ Um überhaupt mit dem Thema VUI vertraut zu werden, habe ich mir [zusätzlich In
 ### Anwenden
 Ich ging Schritt für Schritt vor, um mein VUI-Konzept zu erstellen:
 1. Thema überlegen - BI VUI für das Intranet
-2. [Liste](https://github.com/mnlmrngl/IFD-WiSe20-21/blob/master/task04-vui%20prototype/2020_11_08-Vorarbeit-M%C3%B6ggliche%20Themen%20und%20Fragenbeispiele.pdf) mit möglichen Themen, Fragen und Antworten überlegen
+2. [Liste](https://github.com/mnlmrngl/IFD-WiSe20-21/blob/master/task04-vui%20prototype/2020_11_08-Vorarbeit-M%C3%B6ggliche%20Themen%20und%20Fragenbeispiele.pdf) mit möglichen Themen und Fragen überlegen der VUI-Interaktion überlegt
 3. Überlegungen als [Flowchart](https://github.com/mnlmrngl/IFD-WiSe20-21/blob/master/task04-vui%20prototype/vui%20konzept_flowchart.pdf) in Fabble.io darstellen.  
 Hierbei sind nicht alle Ideen aus der Ideenliste umgesetzt.
 
