@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
+    <script src="js/libs/artyom.window.min.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <h1>Task 5 - VUI-Prototyp</h1>
+    </header>
+
+    <main>
+        <section id="intro">
+            <div id="buttons">
+                <button id="start">Audio Assistent starten</button>
+            </div>
+            <p class="description">Dieser Audioassistent funktioniert nur in Google Chrome. Bei anderen Browsern kann es
+                sein, dass dieser nur teilweise oder auch garnicht funktioniert.</p>
+        </section>
+
+        <section class="examples">
+            <h2>Beispielgesspräch</h2>
+            <audio controls="on">
+                <source src="audio/Beispeil_v01.mp3" type="audio/mp3">
+                Keine Audio Unterstützung
+            </audio>
+        </section>
+
+        <section id="variants">
+            <h2>Varianten von Befehelen</h2>
+            <p>Durch den <span class="code">smart</span>-Befehl von Artyom ist es mir möglich gewesen, Befehle allgemein zu halten. <br>
+                Unter <span class="code">indexes</span> wird durch das Sternechen (*) in <span class="code">'Wann *
+                    abgeben'</span> ermöglicht, dass zwischen den Wörtern "wann" und "abgeben" alles gesagt werden kann,
+                damit der Befehl ausgeführ wird. Beispiele folgen nun:</p>
+            <div class="flex">
+                <audio controls="on">
+                    <source src="audio/Wann Abgeben_v01.mp3" type="audio/mp3">
+                    Keine Audio Unterstützung
+                </audio>
+                <audio controls="on">
+                    <source src="audio/Wann Abgeben_v02.mp3" type="audio/mp3">
+                    Keine Audio Unterstützung
+                </audio>
+                <audio controls="on">
+                    <source src="audio/Wann Abgeben_v03.mp3" type="audio/mp3">
+                    Keine Audio Unterstützung
+                </audio>
+            </div>
+            <pre class="prettyprint"><code class="language-js">
+                artyom.addCommands({
+                    smart: true,
+                    indexes: ['Schick mir bitte alle Infos dazu', 'Wann * abgeben', '* vergessen'],
+                    action: function (i, wildcard) {
+                        wildcard = null;
+                        if (context == 'today_task' && i == 0) {
+                            sendMail();
+                        }
+                        if (context == 'today_task' && i == 1) {
+                            context = 'today_task_when';
+                            artyom.say('Heute abend um 18 Uhr. Du hast also noch 9 Stunden und 38 Minuten dafür Zeit');
+                        }
+                        if (context == 'today_task' && i == 2) {
+                            artyom.sayRandom([
+                                    'Mach dir keine Sorgen.',
+                                    'Kein Stress',
+                                ]),
+                                artyom.say('Ich kann dir alle Informationen dazu per Mail schicken. Soll ich das machen?')
+                            context = 'today_task_forget'
+                        }
+                    }
+                });
+            </code></pre>
+        </section>
+
+        <section id="commands">
+            <h2>Befehle</h2>
+            <h3 class="command">Hallo Intranet</h3>
+            <div class="example">
+                <audio controls="on">
+                    <source src="audio/Hallo Intranet_v01.mp3" type="audio/mp3">
+                    Keine Audio Unterstützung
+                </audio>
+                <div class="text">
+                    <p>Damit der Sprachassitent funtioniert, muss man ihn mit <span class="command">Hallo
+                            Intranet</span> begrüßen. Hat er dies wahrgenommen, so antwortet er mit einem Ton. Das
+                        heißt, dass er bereit ist einen Befehl entgegen zu nehmen.</p>
+                </div>
+            </div>
+
+            <h3 class="command">Stop</h3>
+            <div class="example">
+                <audio controls="on">
+                    <source src="audio/Stopp jetzt_v01.mp3" type="audio/mp3">
+                    Keine Audio Unterstützung
+                </audio>
+                <div class="text">
+                    <p>der Befehl <span class="command">Stop</span> beendet die auktuelle Wiedergabe. Gelichezeitig
+                        führt der Assistent keine Befehle aus. Dies geschieht erst, wenn wieder <span
+                            class="command">Hallo
+                            Intranet</span> gesagt wird.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="command">Jetzt</h3>
+            <div class="example">
+                <audio controls="on">
+                    <source src="audio/Stopp jetzt_v01.mp3" type="audio/mp3">
+                    Keine Audio Unterstützung
+                </audio>
+                <div class="text">
+                    <p>Der Befehl <span class="command">Jetzt</span> führt den soeben gesprochenen Befehl sofort aus.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="no-command-found">
+            <h2>Feedback</h2>
+            <h3>Startton</h3>
+            <div class="example">
+                <audio controls="on">
+                    <source src="active.wav" type="audio/mp3">
+                    Keine Audio Unterstützung
+                </audio>
+                <div class="text">
+                    <p>Dieser Befehl gibt dem Nutzer Feedback, dass der Assistent jetzt bereit ist einen Befehl
+                        anzunehmen um diesen zu verarbeiten. Gleichzeitig ist das auch der Anfang eines Gesprächs
+                        innerhalb eines Kontext.</p>
+                </div>
+            </div>
+
+            <h3>Startton</h3>
+            <div class="example">
+                <audio controls="on">
+                    <source src="stop.wav" type="audio/mp3">
+                    Keine Audio Unterstützung
+                </audio>
+                <div class="text">
+                    <p>Dieser Ton zeigt an, dass das Gespräch beendet ist. Der Assistent hat den Kontext vergesen. Um
+                        ein neues Gespräch anzufangen, muss wieder <span class="command">Hallo Intranet</span> gesagt
+                        werden.</p>
+                </div>
+            </div>
+
+            <h3>Kein Befehl gefunden</h3>
+            <div class="example">
+                <audio controls="on">
+                    <source src="audio/Dabei kann ich die nicht helfen_v01.mp3" type="audio/mp3">
+                    Keine Audio Unterstützung
+                </audio>
+                <div class="text">
+                    <p>Kann der Assistent bei einer Frage nicht weiterhlefen, so gibt er dies auch an den Nutzer weiter.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="not-implemented">
+            <h2>Sonstiges</h2>
+            <h3>Nicht implementierte Dinge</h3>
+            <div class="example">
+                <div class="item">
+                    Abschalten nach 3 Sekunden
+                </div>
+                <div class="text">
+                    <p>Wenn der Assistent auf einen Befehl wartet, aber nach 3 Sekunden keiner kommt. Schaltet er sich
+                        ab und wartet bis <span class="command">Hallo Intranet</span> gesagt wird. Dabei wird der Konext
+                        gelöscht. <br>
+                        Hierz fehlte mir eine Funktion innerhalb Artyoms. Eine eigene Imlementierung ist mir nicht gelungen.</p>
+                </div>
+            </div>
+
+            <h3>Kontext</h3>
+            <div class="text">
+                <p>Mit der Variable <span class="code">context</span> wird garantiert, das der der Gesprächsverlauf
+                    fortlaufend ist. Das heißt der Assistent merkt sich bis abschalten des Gesprächs über welches Thema
+                    gerade gesprochen wird und an der welcher Stelle die Konversation gerade ist. <br>
+                    Durch eine <span class="code">if</span>-Abfrage des Kontext kann dasnn entschieden werden, welcher
+                    Text der Assistent ausgeben soll. Der Wert der Vaiable wird ebi jeder Spracheingabe den Nutzers neu
+                    gesetzt.
+                </p>
+                <b>Beispiel:</b>
+                <pre class="prettyprint"><code class="language-js">
+                        artyom.addCommands({
+                            indexes: ['Öffne schon mal alles auf meinem PC dafür', 'Öffne dafür alles auf meinem PC'],
+                            action: function (i) {
+                                if (context == 'today_lecture' && (i == 0 || i == 1)) {
+                                    j = 0;
+                                    context = 'today_lecture_open';
+                                    youAreWelcome()
+                                    artyom.when('SPEECH_SYNTHESIS_END', function () {
+                                        if (j == 0) {
+                                            sayBye();
+                                            j++;
+                                        }
+                                    })
+                                    artyom.when('SPEECH_SYNTHESIS_END', function () {
+                                        if (j == 1) {
+                                            isEnding = true;
+                                            contextEnd();
+                                            j = null;
+                                        }
+                                    })
+                                }
+                            }
+                        });
+                        </code></pre>
+            </div>
+        </section>
+        <h3>Methoden/Funktionen</h3>
+                <div class="text">
+                    <p>Wiederholdnde Elemente habe ich in Methoden ausgelagert. Diese werden bei bedarf getriggert und ausgerufen. Somit ist eine einfe überearbeitung einzeler Segmete gegeben.</p>
+                </div>
+         
+    </main>
+    <footer><span>Manuel Maringolo</span><span>260683</span><span>IFD WS20/21</span></footer>
+    <script src="js/vui.js"></script>
+</body>
+
+</html>
