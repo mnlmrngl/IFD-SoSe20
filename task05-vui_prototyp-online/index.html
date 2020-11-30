@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 05 - VUI-Prototyp</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
+    <script
+        src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=sunburst">
+    </script>
     <script src="js/libs/artyom.window.min.js"></script>
-    
+
 </head>
 
 <body>
@@ -23,10 +25,16 @@
             </div>
             <p class="description">Dieser Audioassistent funktioniert nur in Google Chrome. Bei anderen Browsern kann es
                 sein, dass dieser nur teilweise oder auch garnicht funktioniert.</p>
+
+            <h2>Nutzungshinweise</h2>
+            <p>Der Sprachassistent kann die im folgenden Flowchart gezeigten Befehle (grün markiert) bearbeiten.</p>
+            <div class="img-center">
+                <img src="img/flowchart_v02.png" alt="Flowchart der Befehle">
+            </div>
         </section>
 
         <section class="examples">
-            <h2>Beispielgesspräch</h2>
+            <h2>Beispielgespräch</h2>
             <audio controls="on">
                 <source src="audio/Beispeil_v01.mp3" type="audio/mp3">
                 Keine Audio Unterstützung
@@ -35,10 +43,11 @@
 
         <section id="variants">
             <h2>Varianten von Befehelen</h2>
-            <p>Durch den <span class="code">smart</span>-Befehl von Artyom ist es mir möglich gewesen, Befehle allgemein zu halten. <br>
+            <p>Durch den <span class="code">smart</span>-Befehl von Artyom ist es mir möglich gewesen, Befehle allgemein
+                zu halten. <br>
                 Unter <span class="code">indexes</span> wird durch das Sternechen (*) in <span class="code">'Wann *
                     abgeben'</span> ermöglicht, dass zwischen den Wörtern "wann" und "abgeben" alles gesagt werden kann,
-                damit der Befehl ausgeführ wird. Beispiele folgen nun:</p>
+                damit der Befehl ausgeführt wird. Beispiele folgen nun:</p>
             <div class="flex">
                 <audio controls="on">
                     <source src="audio/Wann Abgeben_v01.mp3" type="audio/mp3">
@@ -101,7 +110,7 @@
                     Keine Audio Unterstützung
                 </audio>
                 <div class="text">
-                    <p>der Befehl <span class="command">Stop</span> beendet die auktuelle Wiedergabe. Gelichezeitig
+                    <p>Der Befehl <span class="command">Stop</span> beendet die aktuelle Wiedergabe. Geleichezeitig
                         führt der Assistent keine Befehle aus. Dies geschieht erst, wenn wieder <span
                             class="command">Hallo
                             Intranet</span> gesagt wird.
@@ -131,8 +140,8 @@
                     Keine Audio Unterstützung
                 </audio>
                 <div class="text">
-                    <p>Dieser Befehl gibt dem Nutzer Feedback, dass der Assistent jetzt bereit ist einen Befehl
-                        anzunehmen um diesen zu verarbeiten. Gleichzeitig ist das auch der Anfang eines Gesprächs
+                    <p>Dieser Befehl gibt dem Nutzer Feedback, dass der Assistent nun bereit ist, um einen Befehl
+                        anzunehmen und diesen zu verarbeiten. Gleichzeitig ist das auch der Anfang eines Gesprächs
                         innerhalb eines Kontext.</p>
                 </div>
             </div>
@@ -144,7 +153,7 @@
                     Keine Audio Unterstützung
                 </audio>
                 <div class="text">
-                    <p>Dieser Ton zeigt an, dass das Gespräch beendet ist. Der Assistent hat den Kontext vergesen. Um
+                    <p>Dieser Ton zeigt an, dass das Gespräch beendet ist. Der Assistent hat den Kontext vergessen. Um
                         ein neues Gespräch anzufangen, muss wieder <span class="command">Hallo Intranet</span> gesagt
                         werden.</p>
                 </div>
@@ -157,10 +166,11 @@
                     Keine Audio Unterstützung
                 </audio>
                 <div class="text">
-                    <p>Kann der Assistent bei einer Frage nicht weiterhlefen, so gibt er dies auch an den Nutzer weiter.
+                    <p>Kann der Assistent bei einer Frage nicht weiterhelfen, so gibt er dies auch an den Nutzer weiter.
                     </p>
                 </div>
             </div>
+
         </section>
 
         <section class="not-implemented">
@@ -171,20 +181,33 @@
                     Abschalten nach 3 Sekunden
                 </div>
                 <div class="text">
-                    <p>Wenn der Assistent auf einen Befehl wartet, aber nach 3 Sekunden keiner kommt. Schaltet er sich
+                    <p>Wenn der Assistent auf einen Befehl wartet, aber nach 3 Sekunden keiner kommt, schaltet er sich
                         ab und wartet bis <span class="command">Hallo Intranet</span> gesagt wird. Dabei wird der Konext
                         gelöscht. <br>
-                        Hierz fehlte mir eine Funktion innerhalb Artyoms. Eine eigene Imlementierung ist mir nicht gelungen.</p>
+                        Hierz fehlte mir eine Funktion innerhalb Artyoms. Eine eigene Implementierung ist mir nicht
+                        gelungen.</p>
+                </div>
+            </div>
+            <div class="example">
+                <div class="item">
+                    Gespräch wird nicht immer automatisch Beendet
+                </div>
+                <div class="text">
+                    <p>Nach <span class="code">artyom.say</span> konnte ich keine Methode mehr aufrufen, die das Gespäch
+                        beendet und den Sprachassistent wieder zurücksetzt. Darum musste ich den Befehl <span
+                            class="command">Danke</span> einführen. Dieser führ die Methode <span
+                            class="code">youAreWelcome()</span> und <span class="code">contextEnd()</span> aus. Letztere
+                        übernimmt die Aufgabe des Zurücksetzts.</p>
                 </div>
             </div>
 
             <h3>Kontext</h3>
             <div class="text">
-                <p>Mit der Variable <span class="code">context</span> wird garantiert, das der der Gesprächsverlauf
-                    fortlaufend ist. Das heißt der Assistent merkt sich bis abschalten des Gesprächs über welches Thema
-                    gerade gesprochen wird und an der welcher Stelle die Konversation gerade ist. <br>
-                    Durch eine <span class="code">if</span>-Abfrage des Kontext kann dasnn entschieden werden, welcher
-                    Text der Assistent ausgeben soll. Der Wert der Vaiable wird ebi jeder Spracheingabe den Nutzers neu
+                <p>Mit der Variable <span class="code">context</span> wird garantiert, dass der Gesprächsverlauf
+                    fortlaufend ist. Das heißt, der Assistent merkt sich bis zum abschalten des Gesprächs, über welches Thema
+                    gerade gesprochen wird und an welcher Stelle die Konversation gerade ist. <br>
+                    Durch eine <span class="code">if</span>-Abfrage des Kontext kann dann entschieden werden, welcher
+                    Text der Assistent ausgeben soll. Der Wert der Vaiable wird bei jeder Spracheingabe des Nutzers neu
                     gesetzt.
                 </p>
                 <b>Beispiel:</b>
@@ -214,12 +237,23 @@
                         });
                         </code></pre>
             </div>
+
+            <h3>Methoden/Funktionen</h3>
+            <div class="text">
+                <p>Wiederholende Elemente habe ich in Methoden ausgelagert. Diese werden bei Bedarf getriggert und
+                    ausgerufen. Somit ist eine einfche Überearbeitung einzeler Segmete gegeben.</p>
+            </div>
+            <h3>Unterschiede zum Konzept</h3>
+            <div class="text">
+                <p>Der Prototyp weicht vom Konzept ab. Ich habe beim testen bemerkt, dass kürzere Unterhaltungen
+                    angenehmer und sinnviller für den Nutzer sind. Deshalb fragt der Assistent nach Durchführung einer
+                    Aufgabe nicht mehr nach, ob er noch etwas anderes tun könne. Nach Beenidigung einer Aufgabe ertönt der
+                    Endton. Möchte der Nutzer nun eine neue Aufgabe an den Spachassistent weitergeben, so muss dieser
+                    wieder den Befehl <span class="command">Hallo Intranet</span> verwenden.</p>
+            </div>
         </section>
-        <h3>Methoden/Funktionen</h3>
-                <div class="text">
-                    <p>Wiederholdnde Elemente habe ich in Methoden ausgelagert. Diese werden bei bedarf getriggert und ausgerufen. Somit ist eine einfe überearbeitung einzeler Segmete gegeben.</p>
-                </div>
-         
+
+
     </main>
     <footer><span>Manuel Maringolo</span><span>260683</span><span>IFD WS20/21</span></footer>
     <script src="js/vui.js"></script>
