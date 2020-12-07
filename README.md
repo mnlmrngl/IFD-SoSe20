@@ -1,8 +1,6 @@
 # IFD-WiSe20-21
-[task08 - Mixed Realitiy - Cardboard Brille](https://mnlmrngl.github.io/IFD-WiSe20-21/task08-VR_Cardboard/task08-VR_Cardboard.md)
 
-<a href="https://mnlmrngl.github.io/IFD-WiSe20-21/task08-VR_Cardboard/task08-VR_Cardboard.md" target="_blank">task08 - Mixed Realitiy - Cardboard Brille</a>
-
+<a href="https://github.com/mnlmrngl/IFD-WiSe20-21/blob/master/task08-VR_Cardboard/task08-VR_Cardboard.md" target="_blank">task08 - Mixed Realitiy - Cardboard Brille</a>
 
 [task05 - Intranet VUI Prototyp](https://mnlmrngl.github.io/IFD-WiSe20-21/task05-vui_prototyp-online/index.html)
 
