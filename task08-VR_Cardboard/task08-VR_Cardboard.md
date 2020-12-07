@@ -1,15 +1,18 @@
 # Task 08 - Mxed Reality - Cardboard Brille
 ## 1. Designen
 Mithilfe eines Designtools, habe ich zunächst ein Design für die Cardboard Brille erstellt.
+
 ![Design Tool](img/Design.png)
 
 ## 2. Kleben
 Zum Kleben habe ich Tapennkleister verwendet.
+
 ![Kleben](img/Cardboard%20(1).jpg)
 ![Kleben_02](img/Cardboard%20(2).jpg)
 
 ## 3. Ausschneiden
 Zum Ausschneiden habe ich einen Cutter benutzt
+
 ![Schneiden](img/Cardboard%20(3).jpg)
 ![Schneiden_02](img/Cardboard%20(4).jpg)
 
