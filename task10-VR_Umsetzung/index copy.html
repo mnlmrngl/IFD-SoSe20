@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
+    <script>
+        AFRAME.registerComponent('play-pause', {
+            init: function () {
+                var myVideo = document.getElementById('360_video');
+                var videoControls = document.getElementById('videoControls');
+                this.el.addEventListener('click', function () {
+                    if (myVideo.paused) {
+                        myVideo.play();
+                        videoControls.setAttribute('src', '#pause');
+                    } else {
+                        myVideo.pause();
+                        videoControls.setAttribute('src', '#play');
+                    }
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <a-scene>
+
+        <a-assets>
+            <img src="images/play.png" alt="" id="play">
+            <img src="images/pause.png" alt="" id="pause">
+            <video src="video/02_360Video_Snippet.mp4" id="360_video"></video>
+            <img src="images/360_image.png" alt="" id="360_image">
+            <img src="images/eye.png" alt="" id="eye_asset">
+        </a-assets>
+
+      
+
+       <a-camera wasd-controls-enabled="false">
+            <a-entity cursor="fuse: true; fuseTimeout: 1500" position="0 0 -1"
+                geometry="primitive: sphere; radius: 0.005" material="color: black; shader: flat; opacity: 0.5">
+            </a-entity>
+
+        </a-camera>
+
+
+        <a-sky src="#360_video" rotation="0 90 0"></a-sky>
+        <a-image id="videoControls" src="#play" position="0 1 -2" play-pause></a-image>
+
+        
+        
+<!-- 
+
+        Interactive Planes-->
+        <a-plane id="formate_beibehalten" onclick="clicked_note(this)" onmouseleave="leave_note(this)" rotation="0 30 0"
+            scale="0.2 0.19" color="#ee8fa8" width="8" height="4.5" position="-10 2.3 -13.63589"
+            controller-event-handler
+            animation__active_scale="property: scale; type: scale; to: 1 1; startEvents: click; dur: 500"
+            animation__pasive_scale="property: scale; type: scale; to: 0.2 0.19; startEvents: mouseleave; dur: 500">
+
+            
+
+
+            <a-image id="eye" src="#eye_asset" scale="3 3 " position="5 1 1"
+                animation__pulse="property: scale; to: 5 5; dur: 700; dir: alternate; easing: easeInOutQuad; loop: true">
+            </a-image>
+           
+            
+        </a-plane>
+        
+     
+
+        <a-plane id="rausch" onclick="clicked_note(this)" onmouseleave="leave_note(this)" color="green" 
+            rotation="0 30 0" scale="0.2 0.19" color="#ee8fa8" width="8" height="4.5" position="-9.8 1.4 -13.63589"
+            opacity="1" controller-event-handler visible="false"
+            animation__active_scale="property: scale; type: scale; to: 1 1 ; startEvents: click; dur: 500"
+            animation__active_position="property: position; to 1 1 1; startEvents: click; dur: 500"
+            animation__pasive_scale="property: scale; type: scale; to: 0.2 0.19 ; startEvents: mouseleave; dur: 500">
+
+            <a-image id="eye" src="#eye_asset" scale="3 3 " position="5 1 1"
+                animation__pulse="property: scale; to: 5 5; dur: 700; dir: alternate; easing: easeInOutQuad; loop: true">
+            </a-image>
+        </a-plane>
+
+        <a-plane id="familie" onclick="clicked_note(this)" onmouseleave="leave_note(this)" color="yellow"
+            rotation="0 30 0" width="8" height="4.5" scale="0.2 0.19" position="-18.5 1.8 -13.63589"
+            controller-event-handler visible="false"
+            animation__active_scale="property: scale; type: scale; to: 5 5; startEvents: click; dur: 500"
+            animation__pasive_scale="property: scale; type: scale; to: 1 1 ; startEvents: mouseleave; dur: 500">
+
+            <a-image id="eye" src="#eye_asset" scale="3 3 " position="5 1 1"
+                animation__pulse="property: scale; to: 5 5; dur: 700; dir: alternate; easing: easeInOutQuad; loop: true">
+            </a-image>
+        </a-plane>
+
+        <a-entity id="opacity" position="0 1.6 -2" text="color: black; align: center; value: Animating opacity; width: 1.5">
+        </a-entity>
+    </a-scene>
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
