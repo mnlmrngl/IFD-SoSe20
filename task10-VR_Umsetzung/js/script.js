@@ -1,7 +1,6 @@
 const video = document.getElementById('360_video');
 var time;
 
-var videoControls = document.getElementById('videoControls');
 
 setInterval(function () {
     time = video.currentTime;

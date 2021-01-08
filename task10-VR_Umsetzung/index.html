@@ -13,8 +13,8 @@
             <img src="images/play.png" alt="" id="play">
             <img src="images/pause.png" alt="" id="pause">
             <video src="video/02_360Video_Snippet.mp4" id="360_video"></video>
-            <img src="images/360_image.png" alt="" id="360_image">
             <img src="images/eye.png" alt="" id="eye_asset">
+            <img src="images/play_white.png" alt="" id="play_white_asset">
         </a-assets>
 
         <a-camera wasd-controls-enabled="false">
@@ -27,16 +27,24 @@
         </a-camera>
 
 
-        <a-sky src="#360_video" rotation="0 90 0"></a-sky>
-        <!-- <a-sky src="#360_image" rotation="0 90 0"></a-sky> -->
-        <!-- <a-sky color="lightblue"></a-sky> -->
+        <a-sky src="#360_video" rotation="0 90 0"></a-sky>>
+
+        <a-entity id="welcome"
+            position="0 1.8 -2">
+            <a-text
+                value="Look for 1.5 seconds at the play button to start the video."
+                color="white"
+                align="center">
+            </a-text>
+            <a-image id="startControl" src="#play_white_asset" position="0 -0.5 0" scale="0.4 0.4" play></a-image>
+        </a-entity>
         
 
         <a-entity id="timeElement"
             rotation="0 45 0"
             position="-2.7 0.3 -2">
 
-            <a-image id="videoControls" src="#play" position="0 0 0" scale="0.4 0.4" play-pause></a-image>
+            <a-image id="videoControls" src="#pause" position="0 0 0" scale="0.4 0.4" play-pause visible="false"></a-image>
 
             <a-text id="currentTime"
                 width="6" 
@@ -126,6 +134,21 @@
                     } else {
                         myVideo.pause();
                         videoControls.setAttribute('src', '#play');
+                    }
+                });
+            }
+        });
+        AFRAME.registerComponent('play', {
+            init: function () {
+                var videoControls = document.getElementById('videoControls');
+                var myVideo = document.getElementById('360_video');
+                var startControl = document.getElementById('startControl');
+                this.el.addEventListener('click', function () {
+                    if (myVideo.paused) {
+                        myVideo.play();
+                        welcome.setAttribute('visible', 'false');
+                        
+                        videoControls.setAttribute('visible', 'true');
                     }
                 });
             }
