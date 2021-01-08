@@ -5,8 +5,6 @@
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-animation-component@4.1.2/dist/aframe-animation-component.min.js"></script>
-    
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -22,7 +20,10 @@
         <a-camera wasd-controls-enabled="false">
             <a-entity cursor="fuse: true; fuseTimeout: 1500" position="0 0 -1"
                 geometry="primitive: sphere; radius: 0.005" material="color: black; shader: flat; opacity: 0.5">
+
+                <a-ring color="white" position="0 0 -1" radius-inner="0.005" radius-outer="0.01"></a-ring>
             </a-entity>
+            
         </a-camera>
 
 
@@ -130,8 +131,6 @@
             }
         });
     </script>
-
-
     <script src="js/script.js"></script>
 </body>
 
