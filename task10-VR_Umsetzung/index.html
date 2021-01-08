@@ -5,23 +5,7 @@
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-animation-component@4.1.2/dist/aframe-animation-component.min.js"></script>
-    <script>
-        AFRAME.registerComponent('play-pause', {
-            init: function () {
-                var myVideo = document.getElementById('360_video');
-                var videoControls = document.getElementById('videoControls');
-                this.el.addEventListener('click', function () {
-                    if (myVideo.paused) {
-                        myVideo.play();
-                        videoControls.setAttribute('src', '#pause');
-                    } else {
-                        myVideo.pause();
-                        videoControls.setAttribute('src', '#play');
-                    }
-                });
-            }
-        });
-    </script>
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -45,9 +29,23 @@
         <a-sky src="#360_video" rotation="0 90 0"></a-sky>
         <!-- <a-sky src="#360_image" rotation="0 90 0"></a-sky> -->
         <!-- <a-sky color="lightblue"></a-sky> -->
-        <a-image id="videoControls" src="#play" position="-19 -8 -13" rotation="0 30 0" scale="2 2" play-pause></a-image>
+        
 
+        <a-entity id="timeElement"
+            rotation="0 45 0"
+            position="-2.7 0.3 -2">
 
+            <a-image id="videoControls" src="#play" position="0 0 0" scale="0.4 0.4" play-pause></a-image>
+
+            <a-text id="currentTime"
+                width="6" 
+                position="0.3 0 0"
+                scale="0.8 0.8"
+                color="black">
+            </a-text>
+                
+            </a-entity>
+        </a-entity>
     
 
         <a-entity class="zettel" id="formate_beibehalten" onclick="clicked_note(this)" onmouseleave="leave_note(this)"
@@ -56,8 +54,8 @@
             rotation="0 30 0" 
             scale="0.2 0.19"
             geometry="primitive: plane; width: 8; height: auto" 
-            material="color: #ee8fa8; shader: flat" 
-            text="color: white; align: center;
+            material="color: #ee8fa8; shader: flat; opacity: 0" 
+            text="color: white; align: center; opacity: 0;
               value: Einzelne Formate beibehalten; color: black; wrapCount: 10"
             animation__active_position="property: position; to: -10 2.3 -13; startEvents: click; dur: 500"
             animation__active_scale="property: scale; type: scale; to: 1 1; startEvents: click; dur: 500"
@@ -65,9 +63,9 @@
             animation__pasive_scale="property: scale; type: scale; to: 0.2 0.19; startEvents: mouseleave; dur: 500"
             animation__pasive_position="property: position; to: -10 2.3 -13.63589; startEvents: mouseleave; dur: 500">
 
-            <a-image id="eye" 
+            <a-image class="eye" 
                 src="#eye_asset" scale="3 3" 
-                position="5 1 0.1"
+                position="0 0 0.1"
                 animation__eye_pulse="property: scale; to: 5 5; loop: true; dur: 700; dir: alternate; easing: easeInOutQuad;">
             </a-image>
            
@@ -79,15 +77,15 @@
             rotation="0 30 0" 
             scale="0.2 0.19"
             geometry="primitive: plane; width: 8; height: auto" 
-            material="color: #ee8fa8; shader: flat" 
-            text="color: white; align: center;
+            material="color: #ee8fa8; shader: flat; opacity: 0" 
+            text="color: white; align: center; opacity: 0;
               value: Ich kann nicht lesen was hier steht; color: black; wrapCount: 10"
             animation__active_scale="property: scale; type: scale; to: 1 1; startEvents: click; dur: 500"
             animation__pasive_scale="property: scale; type: scale; to: 0.2 0.19; startEvents: mouseleave; dur: 500">
               
-            <a-image id="eye" 
+            <a-image class="eye" 
                 src="#eye_asset" scale="3 3" 
-                position="5 1 0.1"
+                position="0 0 0.1"
                 animation__eye_pulse="property: scale; to: 5 5; loop: true; dur: 700; dir: alternate; easing: easeInOutQuad;">
             </a-image>
            
@@ -99,27 +97,39 @@
             rotation="0 30 0" 
             scale="0.3 0.3"
             geometry="primitive: plane; width: 8; height: auto" 
-            material="color: #ee8fa8; shader: flat" 
-            text="color: white; align: center;
+            material="color: #ee8fa8; shader: flat; opacity: 0" 
+            text="color: white; align: center; opacity: 0;
               value: Zeit für die Familie; color: black; wrapCount: 10"
             animation__active_scale="property: scale; type: scale; to: 1 1; startEvents: click; dur: 500"
             animation__pasive_scale="property: scale; type: scale; to: 0.3 0.3; startEvents: mouseleave; dur: 500">
               
-            <a-image id="eye" 
+            <a-image class="eye" 
                 src="#eye_asset" scale="3 3" 
-                position="5 1 0.1"
+                position="0 0 0.1"
                 animation__eye_pulse="property: scale; to: 5 5; loop: true; dur: 700; dir: alternate; easing: easeInOutQuad;">
             </a-image>
            
         </a-entity>
         
-
-      
-
-
-
-
     </a-scene>
+
+    <script>
+        AFRAME.registerComponent('play-pause', {
+            init: function () {
+                var myVideo = document.getElementById('360_video');
+                var videoControls = document.getElementById('videoControls');
+                this.el.addEventListener('click', function () {
+                    if (myVideo.paused) {
+                        myVideo.play();
+                        videoControls.setAttribute('src', '#pause');
+                    } else {
+                        myVideo.pause();
+                        videoControls.setAttribute('src', '#play');
+                    }
+                });
+            }
+        });
+    </script>
 
 
     <script src="js/script.js"></script>
