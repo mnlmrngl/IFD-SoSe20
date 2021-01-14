@@ -38,5 +38,5 @@ Das Video wird gefunden und erkannt. Es wird aber nicht in der der A-Frame-Scene
 Leider konnte ich diese nicht beheben. Dadurch ist mein Prototyp online nicht nutzbar.
 
 ## 4. Screencast und Download
-Aus dem Soeben genannten Problem, kann der Prototyp leider nicht online abgerufen werden. Deshab habe ich einen [Screencast](https://github.com/mnlmrngl/IFD-WiSe20-21/raw/master/task10-VR_Umsetzung/video.html) erstellt und die [Files als ZIP-File zum Download](https://github.com/mnlmrngl/IFD-WiSe20-21/raw/master/task10-VR_Umsetzung/task10-VR_Umsetzung.zip) bereitgestellt.
+Aus dem Soeben genannten Problem, kann der Prototyp leider nicht online abgerufen werden. Deshab habe ich einen [Screencast](https://mnlmrngl.github.io/IFD-WiSe20-21/task10-VR_Umsetzung/video.html) erstellt und die [Files als ZIP-File zum Download](https://github.com/mnlmrngl/IFD-WiSe20-21/raw/master/task10-VR_Umsetzung/task10-VR_Umsetzung.zip) bereitgestellt.
 
