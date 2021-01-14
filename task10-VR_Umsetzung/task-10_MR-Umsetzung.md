@@ -38,10 +38,10 @@ Das Video wird gefunden und erkannt. Es wird aber nicht in der der A-Frame-Scene
 Leider konnte ich diese nicht beheben. Dadurch ist mein Prototyp online nicht nutzbar.
 
 ## 4. Screencast und Download
-Aus dem Soeben genannten Problem, kann der Prototyp leider nicht online abgerufen werden. Deshab habe ich einen Screencast erstellt und die Files als ZIP-File zum Download bereitgestellt.
+Aus dem Soeben genannten Problem, kann der Prototyp leider nicht online abgerufen werden. Deshab habe ich einen Screencast erstellt und die [Files als ZIP-File zum Download](https://github.com/mnlmrngl/IFD-WiSe20-21/raw/master/task10-VR_Umsetzung/task10-VR_Umsetzung.zip) bereitgestellt.
 
 <video width="320" height="240" controls>
   <source src="Screencast.mp4" type="video/mp4">
 </video>
 
-[![SC2 Video](https://img.youtube.com/vi/--b-9HrKK6w/0.jpg)](Screencast.mp4)
+[![SC2 Video](https://img.youtube.com/vi/--b-9HrKK6w/0.jpg)](Screencast-1.mp4)
