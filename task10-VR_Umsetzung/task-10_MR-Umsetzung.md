@@ -10,7 +10,7 @@ Ich habe mich bei der Umsetzung auf einen einminutigen Clip der Gesprächsrunde 
 
 ## 2. Technologie bzw. Basis der Umsetzung
 Bei der Umsetzung habe ich mir für das web-basierte [A-Frame](https://aframe.io/) entschieden.  
-Dieses ist kleicht zu lernen und schenll umzusetzen. Man muss alle Elemente nur in HTML mittels Attributen definieren. CSS habe ich keines verwendet. Zusätzlich habe ich eine JS-Datei benutzt, um Elemente anhand der aktuellen Zeit den Videos anzeigen zu können.  
+Dieses ist kleicht zu lernen und schnell umzusetzen. Man muss alle Elemente nur in HTML mittels Attributen definieren. CSS habe ich keines verwendet. Zusätzlich habe ich eine JS-Datei benutzt, um Elemente anhand der aktuellen Zeit den Videos anzeigen zu können.  
 
 Durch die große Community und die gute Dokumentation können (fast) alle Fragen beantwortet werden.
 
@@ -33,6 +33,7 @@ Sowhol der bei Github als auch beim HFU-Webspace tritt das Problem auf, dass sic
 **Das Problem**  
 Das Video wird gefunden und erkannt. Es wird aber nicht in der der A-Frame-Scene abgespielt. Schaut man sich in den Developer-Tools des Browsers um, so kommt folgende Fehlermeldung. 
 
+
 ![Fehlermeldung des Videodatei](Fehlermeldung_video.jpeg)
 
 Leider konnte ich diese nicht beheben. Dadurch ist mein Prototyp online nicht nutzbar.
@@ -40,3 +41,11 @@ Leider konnte ich diese nicht beheben. Dadurch ist mein Prototyp online nicht nu
 ## 4. Screencast und Download
 Aus dem Soeben genannten Problem, kann der Prototyp leider nicht online abgerufen werden. Deshab habe ich einen [Screencast](https://mnlmrngl.github.io/IFD-WiSe20-21/task10-VR_Umsetzung/video.html) erstellt und die [Files als ZIP-File zum Download](https://github.com/mnlmrngl/IFD-WiSe20-21/raw/master/task10-VR_Umsetzung/task10-VR_Umsetzung.zip) bereitgestellt.
 
+**++EDIT 18.01.2021++**  
+Das Problem konnte ich lösen indem ich
+
+1. nach einnem Tag ein '>>' zu einem '>' gemacht habe.
+2. die Videodatei von '360_video_snippet.mp4' in 'video_snippet.mp4' umbenannt habe
+3. Die ID des Videos von '360_video' auf 'video' geändert habe
+
+Der [Link](https://mnlmrngl.github.io/IFD-WiSe20-21/task10-VR_Umsetzung/) zum fertigen, nutzbaren Prototypen.
