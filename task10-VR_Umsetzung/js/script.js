@@ -1,4 +1,4 @@
-const video = document.getElementById('360_video');
+const video = document.getElementById('video');
 var time;
 
 

@@ -125,7 +125,7 @@
     <script>
         AFRAME.registerComponent('play-pause', {
             init: function () {
-                var myVideo = document.getElementById('360_video');
+                var myVideo = document.getElementById('video');
                 var videoControls = document.getElementById('videoControls');
                 this.el.addEventListener('click', function () {
                     if (myVideo.paused) {
@@ -141,7 +141,7 @@
         AFRAME.registerComponent('play', {
             init: function () {
                 var videoControls = document.getElementById('videoControls');
-                var myVideo = document.getElementById('360_video');
+                var myVideo = document.getElementById('video');
                 var startControl = document.getElementById('startControl');
                 this.el.addEventListener('click', function () {
                     if (myVideo.paused) {
