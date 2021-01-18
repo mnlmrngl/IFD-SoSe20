@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+html {
+  font-size: 16pt;
+  scroll-behavior: smooth;
+  font-family: Segoe UI;
+}
+.task{
+    display: flex;
+    margin-bottom: 0.5em;
+    border: 0.5em solid #f1f3f4;
+    border-radius: 5px;
+    height: auto;
+}
+
+.task .left{
+    width: 20%;
+    background: #f1f3f4;
+    font-weight: bold;
+    display: flex;
+  justify-content: center;
+}
+.task .left img{
+    max-width: 100%;
+}
+
+
+.task .right{
+    background: #cac8c8;
+    width: 79%;
+    margin-left: 1%;
+    align-items: center;
+    padding: 0.5em;
+}
+
+/* .center-vertical{
+display: flex;
+align-content: center;
+} */
+
+h2{
+    margin:0;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+#intro{
+    background: rgb(195, 255, 213);
+}
+#gui{
+    background: rgb(195, 243, 255);
+}
+#vui{
+    background: rgb(255, 195, 247);
+}
+#mr{
+    background: rgb(255, 224, 195);
+}
