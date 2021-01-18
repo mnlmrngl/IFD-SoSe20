@@ -48,4 +48,5 @@ Das Problem konnte ich lösen indem ich
 2. die Videodatei von '360_video_snippet.mp4' in 'video_snippet.mp4' umbenannt habe
 3. Die ID des Videos von '360_video' auf 'video' geändert habe
 
-Der [Link](https://mnlmrngl.github.io/IFD-WiSe20-21/task10-VR_Umsetzung/) zum fertigen, nutzbaren Prototypen.
+Der [Link](https://mnlmrngl.github.io/IFD-WiSe20-21/task10-VR_Umsetzung/) zum fertigen, nutzbaren Prototypen.  
+**Hinweis** Sollte der Prototyp nicht funktionieren bzw. nicht reagieren, muss die Seite so oft neu geladen werden, bis dieser Funktioniert. 
