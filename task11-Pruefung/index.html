@@ -1,0 +1,179 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-animation-component@4.1.2/dist/aframe-animation-component.min.js"></script> -->
+    <script src="https://unpkg.com/aframe-proxy-event-component/dist/aframe-proxy-event-component.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-slice9-component/dist/aframe-slice9-component.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/aframe-border-component@0.1.3/dist/aframe-border-component.min.js"></script> -->
+    <!-- <script src="js/artyom.window.min.js"></script>
+    <script src="js/artyom.js"></script> -->
+</head>
+
+<body>
+    <audio id="hoverSound" preload="auto">
+        <source src="assets/Hover_sound.mp3" type="audio/mpeg">
+      </audio>
+      
+    <a-scene>
+        <!-- <a-entity slice9="width: 2; height: 1; left: 20; right: 43; top: 20; bottom: 43;" position="0 4 -2"></a-entity> -->
+        
+        <a-assets>
+            <img src="assets/play.png" alt="" id="play">
+            <img src="assets/pause.png" alt="" id="pause">
+            <video src="assets/video_Snippet.mp4" id="video"></video>
+            <img src="assets/eye.png" alt="" id="eye_asset">
+            <img src="assets/play_white.png" alt="" id="play_white_asset">
+        </a-assets>
+
+        <a-camera wasd-controls-enabled="false">
+            <a-entity id="cursor"
+                cursor="fuse: true; fuseTimeout: 1500" position="0 0 -1"
+                geometry="primitive: ring; radius-inner: 0.01; radius-outer: 0.02" 
+                material="color: black; shader: flat; opacity: 1"
+                animation__enter="property: scale; startEvents: scale-down; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
+                animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1">
+                <a-ring id="cursor-border"
+                    color="red"
+                    position="0 0 -0.1"
+                    radius-inner="0.008"
+                    radius-outer="0.025">
+                </a-ring>
+            </a-entity>
+            
+        </a-camera>
+
+
+        <a-sky src="#video" rotation="0 90 0"></a-sky>
+        <a-entity id="welcome" position="0 1.8 -2">
+            <a-plane color="yellow" width="6" height="2" opacity="0.3">
+            <a-text value="Look for 1.5 seconds at the play button to start the video." color="white" align="center">
+            </a-text>
+            <a-image class="cursor-proxy hover-effect" id="startControl" src="#play_white_asset" position="0 -0.5 0.2" scale="0.4 0.4" play onmouseenter="playHoverSound()"></a-image>
+        </a-plane>
+        </a-entity>
+
+
+        <a-entity id="timeElement" rotation="0 45 0" position="-2.7 0.3 -2">
+            <a-image class="cursor-proxy" id="videoControls" src="#pause" position="0 0 0" scale="0.4 0.4" play-pause visible="false" onmouseenter="playHoverSound()">
+            </a-image>
+            <a-text id="currentTime" width="6" position="0.3 0 0" scale="0.8 0.8" color="black">
+            </a-text>
+        </a-entity>
+       
+
+
+        <a-entity id="formate_beibehalten"
+            position="-3.6 1.9 -5" 
+            rotation="0 30 0">
+            <a-entity id="note1" onmouseleave="leave_note(this)"
+                scale="0 0"
+                class="plane_with_text hover-effect"
+                visible="true"
+                geometry="primitive: plane; height: auto; width: auto"
+                material="color: white"
+                position="0 0 -1"
+                text="value: Einzelne Formate beibehalten; width: 2; color: black; align: center; wrapCount: 14;"
+                animation__active_scale="property: scale; type: scale; to: 3 3; startEvents: scale-up; dur: 500"
+                animation__pasive_scale="property: scale; type: scale; to: 0 0; startEvents: mouseleave; dur: 500">
+            </a-entity>
+            <a-image class="eye cursor-proxy hover-effect" onclick="clicked_eye(this)" onmouseenter="playHoverSound()"
+                    src="#eye_asset" 
+                    scale="0.3 0.3"
+                    position="0 0 0.5"
+                    rotatate="0 45 0" 
+                    animation__eye_pulse="property: scale; to: 0.4 0.4; loop: true; dur: 700; dir: alternate; easing: easeInOutQuad;"
+                    proxy-event__enter-scale="event: click; to: #note1; as: scale-up">
+                </a-image>
+        </a-entity>
+
+        <a-entity id="rausch"
+            position="-3.6 1.5 -5" 
+            rotation="0 30 0">
+            <a-entity id="note2" onmouseleave="leave_note(this)"
+                scale="0 0"
+                class="plane_with_text hover-effect"
+                visible="true"
+                geometry="primitive: plane; height: auto; width: auto"
+                material="color: white"
+                position="0 0 -1"
+                text="value: Videokonserven wiederverwerten; width: 2; color: black; align: center; wrapCount: 14;"
+                animation__active_scale="property: scale; type: scale; to: 3 3; startEvents: scale-up; dur: 500"
+                animation__pasive_scale="property: scale; type: scale; to: 0 0; startEvents: mouseleave; dur: 500">
+            </a-entity>
+            <a-image class="eye cursor-proxy hover-effect" onclick="clicked_eye(this)" onmouseenter="playHoverSound()"
+                    src="#eye_asset" 
+                    scale="0.3 0.3"
+                    position="0 0 0.5"
+                    rotatate="0 45 0" 
+                    animation__eye_pulse="property: scale; to: 0.4 0.4; loop: true; dur: 700; dir: alternate; easing: easeInOutQuad;"
+                    proxy-event__enter-scale="event: click; to: #note2; as: scale-up">
+                </a-image>
+        </a-entity>
+
+        <a-entity id="familie"
+            position="-6.5 1.6 -5" 
+            rotation="0 30 0">
+            <a-entity id="note3" onmouseleave="leave_note(this)"
+                scale="0 0"
+                class="plane_with_text hover-effect"
+                visible="true"
+                geometry="primitive: plane; height: auto; width: auto"
+                material="color: white"
+                position="0 0 -1"
+                rotation="0 30 0"
+                text="value: Zeit fuer die Familie; width: 2; color: black; align: center; wrapCount: 10;"
+                event-set__enter-color="material.opacity: 1; _event: mouseenter; _target: #cursor"
+                animation__active_scale="property: scale; type: scale; to: 3 3; startEvents: scale-up; dur: 500"
+                animation__pasive_scale="property: scale; type: scale; to: 0 0; startEvents: mouseleave; dur: 500">
+            </a-entity>
+            <a-image class="eye cursor-proxy hover-effect" onclick="clicked_eye(this)" onmouseenter="playHoverSound()" onmouseout="stopHoverSound()"
+                    src="#eye_asset" 
+                    scale="0.5 0.5"
+                    position="0 0 0.5"
+                    rotatate="0 45 0" 
+                    animation__eye_pulse="property: scale; to: 0.4 0.4; loop: true; dur: 700; dir: alternate; easing: easeInOutQuad;"
+                    proxy-event__enter-scale="event: click; to: #note3; as: scale-up">
+                </a-image>
+        </a-entity>
+    </a-scene>
+
+    <script>
+        AFRAME.registerComponent('play-pause', {
+            init: function () {
+                var myVideo = document.getElementById('video');
+                var videoControls = document.getElementById('videoControls');
+                this.el.addEventListener('click', function () {
+                    if (myVideo.paused) {
+                        myVideo.play();
+                        videoControls.setAttribute('src', '#pause');
+                    } else {
+                        myVideo.pause();
+                        videoControls.setAttribute('src', '#play');
+                    }
+                });
+            }
+        });
+        AFRAME.registerComponent('play', {
+            init: function () {
+                var videoControls = document.getElementById('videoControls');
+                var myVideo = document.getElementById('video');
+                var startControl = document.getElementById('startControl');
+                this.el.addEventListener('click', function () {
+                    if (myVideo.paused) {
+                        myVideo.play();
+                        welcome.remove();
+                        document.getElementById('cursor-border').setAttribute('scale','1 1')
+                        videoControls.setAttribute('visible', 'true');
+                    }
+                });
+            }
+        });        
+    </script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
