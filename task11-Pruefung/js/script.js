@@ -9,12 +9,12 @@ for (i = 0; i < cursor_proxy.length; i++) {
     cursor_proxy[i].setAttribute('proxy-event__enter', 'event: mouseenter; to: #cursor; as: scale-down');
 }
 
-var hover_effect = document.querySelectorAll('.hover-effect');
-for (i = 0; i < hover_effect.length; i++) {
-    console.log('hier')
-    hover_effect[i].setAttribute('event-set__hover-enter', 'scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border');
-    hover_effect[i].setAttribute('event-set__hover-leave', 'scale: 1 1; _event: mouseenter; _target: #cursor-border');
-}
+// var hover_effect = document.querySelectorAll('.hover-effect');
+// for (i = 0; i < hover_effect.length; i++) {
+//     console.log('hier')
+//     hover_effect[i].setAttribute('event-set__hover-enter', 'scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border');
+//     hover_effect[i].setAttribute('event-set__hover-leave', 'scale: 1 1; _event: mouseenter; _target: #cursor-border');
+// }
 
 setInterval(function () {
     time = video.currentTime;
