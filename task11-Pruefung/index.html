@@ -4,22 +4,15 @@
     <meta charset="UTF-8">
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
-    <!-- <script src="https://unpkg.com/aframe-animation-component@4.1.2/dist/aframe-animation-component.min.js"></script> -->
     <script src="https://unpkg.com/aframe-proxy-event-component/dist/aframe-proxy-event-component.min.js"></script>
-    <!-- <script src="https://unpkg.com/aframe-slice9-component/dist/aframe-slice9-component.min.js"></script> -->
-    <!-- <script src="https://unpkg.com/aframe-border-component@0.1.3/dist/aframe-border-component.min.js"></script> -->
-    <!-- <script src="js/artyom.window.min.js"></script>
-    <script src="js/artyom.js"></script> -->
 </head>
 
 <body>
-    <audio id="hoverSound" preload="auto">
-        <source src="assets/Hover_sound.mp3" type="audio/mpeg">
+    <audio id="hoverSound" preload="auto" volume="0.3">
+        <source src="assets/hover_sound.mp3" type="audio/mpeg">
       </audio>
       
-    <a-scene>
-        <!-- <a-entity slice9="width: 2; height: 1; left: 20; right: 43; top: 20; bottom: 43;" position="0 4 -2"></a-entity> -->
-        
+    <a-scene>        
         <a-assets>
             <img src="assets/play.png" alt="" id="play">
             <img src="assets/pause.png" alt="" id="pause">
@@ -53,8 +46,11 @@
         </a-camera>
 
 
-        <a-sky src="#video" rotation="0 90 0"></a-sky>
+        <a-sky src="#video" rotation="0 90 0" visible="false"></a-sky>
+
         <a-entity id="welcome" position="0 1.8 -2">
+            <a-sky color="white"></a-sky>
+
             <a-plane color="yellow" width="6" height="2" opacity="0.3">
             <a-text value="Look for 1.5 seconds at the play button to start the video." color="white" align="center">
             </a-text>
@@ -107,15 +103,15 @@
                 event-set__hover-leave="scale: 1 1; _event: mouseleave; _target: #cursor-border">
             </a-entity>
             <a-image class="eye cursor-proxy hover-effect" onclick="clicked_eye(this)" onmouseenter="playHoverSound()"
-                    src="#eye_asset" 
-                    scale="0.3 0.3"
-                    position="0 0 0.5"
-                    rotatate="0 45 0" 
-                    animation__eye_pulse="property: scale; to: 0.4 0.4; loop: true; dur: 700; dir: alternate; easing: easeInOutQuad;"
-                    proxy-event__enter-scale="event: click; to: #note1; as: scale-up"
-                    event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
+                src="#eye_asset" 
+                scale="0.3 0.3"
+                position="0 0 0.5"
+                rotatate="0 45 0" 
+                animation__eye_pulse="property: scale; to: 0.4 0.4; loop: true; dur: 700; dir: alternate; easing: easeInOutQuad;"
+                proxy-event__enter-scale="event: click; to: #note1; as: scale-up"
+                event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
                 event-set__hover-leave="scale: 1 1; _event: mouseleave; _target: #cursor-border">
-                </a-image>
+            </a-image>
         </a-entity>
 
         <a-entity id="rausch"
@@ -212,5 +208,6 @@
     <script src="js/script.js"></script>
 
 </body>
+
 
 </html>

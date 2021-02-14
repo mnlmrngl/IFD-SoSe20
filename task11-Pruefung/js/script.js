@@ -56,6 +56,7 @@ var audio = document.getElementById('hoverSound');
 function playHoverSound() {
     console.log('play')
     audio.play();
+    audio.volume = 0.05;
 }
 function stopHoverSound() {
     console.log('stop')
