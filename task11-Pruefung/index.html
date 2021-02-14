@@ -46,7 +46,7 @@
         </a-camera>
 
 
-        <a-sky src="#video" rotation="0 90 0" visible="false"></a-sky>
+        <a-sky id="video-sky" src="#video" rotation="0 90 0" visible="false"></a-sky>
 
         <a-entity id="welcome" position="0 1.8 -2">
             <a-sky color="white"></a-sky>
@@ -200,6 +200,7 @@
                         welcome.remove();
                         document.getElementById('cursor-border').setAttribute('scale','1 1')
                         videoControls.setAttribute('visible', 'true');
+                        document.getElementById('video-sky').setAttribute('visible', 'true');
                     }
                 });
             }
