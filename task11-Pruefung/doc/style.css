@@ -142,6 +142,11 @@ section{
     max-height: 200px;
     width: auto;
 }
+
+video{
+    max-width: 1080px;
+    width: 100%;
+}
 footer{
     height: 20px;
     background: white;}

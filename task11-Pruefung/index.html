@@ -155,7 +155,7 @@
         <a-entity id="formate_beibehalten"
             position="-3.6 1.9 -5" 
             rotation="0 30 0"
-            visible="true">
+            visible="false">
             <a-entity id="note1" onmouseleave="leave_note(this)"
                 scale="0 0"
                 class="plane_with_text hover-effect"
@@ -172,7 +172,7 @@
                 src="#eye_asset" 
                 scale="0.3 0.3"
                 position="0 0 0.5"
-                rotatate="0 45 0" 
+                rotation="0 -30 0" 
                 animation__eye_pulse="property: scale; to: 0.4 0.4; loop: true; dur: 700; dir: alternate; easing: easeInOutQuad;"
                 proxy-event__enter-scale="event: click; to: #note1; as: scale-up"
                 event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
@@ -200,7 +200,7 @@
                     src="#eye_asset" 
                     scale="0.3 0.3"
                     position="0 0 0.5"
-                    rotatate="0 45 0" 
+                    rotation="0 -30 0" 
                     animation__eye_pulse="property: scale; to: 0.4 0.4; loop: true; dur: 700; dir: alternate; easing: easeInOutQuad;"
                     proxy-event__enter-scale="event: click; to: #note2; as: scale-up"
                     event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
@@ -211,7 +211,7 @@
         <a-entity id="familie"
             position="-6.5 1.6 -5" 
             rotation="0 30 0"
-            visible="true">
+            visible="false">
             <a-entity id="note3" onmouseleave="leave_note(this)"
                 scale="0 0"
                 class="plane_with_text hover-effect"
@@ -230,7 +230,7 @@
                     src="#eye_asset" 
                     scale="0.5 0.5"
                     position="0 0 0.5"
-                    rotatate="0 45 0" 
+                    rotation="0 45 0" 
                     animation__eye_pulse="property: scale; to: 0.4 0.4; loop: true; dur: 700; dir: alternate; easing: easeInOutQuad;"
                     proxy-event__enter-scale="event: click; to: #note3; as: scale-up"
                     event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
