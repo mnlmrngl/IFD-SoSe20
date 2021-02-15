@@ -80,7 +80,9 @@ section{
 
 .interaktionsschritt{
     width: 100%;
-    background:#f1f1f1;
+    background:none;
+    
+    margin-bottom: 1em;
 }
 .interaktionsschritt .schritt-header{
     text-align: center;
@@ -95,6 +97,10 @@ section{
 }
 .interaktionsschritt .schritt-header .schritt-explenation{
     margin: 0;
+}
+
+.schritt-analyse{
+    background: #f1f3f4;
 }
 
 #findings ul{
