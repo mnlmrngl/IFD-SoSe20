@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prüfungsaufgabe IFD</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
     <script
         src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=sunburst">
     </script>
@@ -14,23 +14,12 @@
 
 <body>
     <menu class="w3-sidebar w3-bar-block w3-light-grey w3-card">
-        <!-- <a href="http://">
-            <div>Customer Journey</div>
-        </a>
-        <a href="http://">
-            <div>Heurostische Analyse</div>
-        </a>
-        <a href="http://">
-            <div>Verbesserungen</div>
-        </a>
-        <a href="http://">
-            <div>Prototyp</div>
-        </a> -->
-        <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'task01')">CHM</button>
-        <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'task02')">Heuristische Analyse</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'task01')">1. CJM</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'task02')">2. Heuristische Analyse</button>
         <button class="w3-bar-item w3-button tablink"
-            onclick="openLink(event, 'verbesserungen')">Verbesserungen</button>
-        <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'prototyp')">Prototyp</button>
+            onclick="openLink(event, 'verbesserungen')">3. Verbesserungen</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'probleme')">4. Probleme</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'prototyp')">5. Prototyp</button>
     </menu>
 
     <section id="task01" class="w3-container city w3-animate-opacity" style="display:none">
@@ -731,25 +720,24 @@
     </section>
 
     <section id="verbesserungen" class="w3-container city w3-animate-opacity" style="display:none">
-        <h2>Verbesserungen</h2>
+        <h2>3. Verbesserungen</h2>
         <p id="info">Nun wird der Prototyp verebessert. Hierbei habe ich die Reihnenfolge, wie ich die
-            Verbesserungen vornehme, anhand von der Varaiablen "Zeitaufwand zur beseitingung" und "Schwere des Problems" selbst getroffen.</p>
+            Verbesserungen vornehme, anhand von der Varaiablen "Zeitaufwand zur beseitingung" und "Schwere des Problems"
+            selbst getroffen.</p>
         <h3>3.1 Lesbarkeit der Notizen</h3>
         <p id="info">Der Text auf den vergrößerten Notizen ist, wie zuvor in den Findings beschrieben, schwer zu lesen.
             Um dies zu beheben musste ich meine Struktur des Codes anpassen. Dies war schnell erledigt.</p>
         <div class="before-after">
             <div class="w3-card">
-                <img src="note_old.png">
+                <img src="assets/img/note_old.png">
                 <div class="w3-container">
                     <h4><b>Alt</b></h4>
-                    <p>Text verschwimmt mit Hintergrund</p>
                 </div>
             </div>
             <div class="w3-card">
-                <img src="note_new.png">
+                <img src="assets/img/note_new.png">
                 <div class="w3-container">
                     <h4><b>Neu</b></h4>
-                    <p>Text ist klar und deutlich lebar</p>
                 </div>
             </div>
         </div>
@@ -771,17 +759,15 @@
             Streifen verabreicht.</p>
         <div class="before-after">
             <div class="w3-card">
-                <img src="cursor_old.png">
+                <img src="assets/img/cursor_old.png">
                 <div class="w3-container">
                     <h4><b>Alt</b></h4>
-                    <p>Kleiner, kaum zu erkennender Cursor</p>
                 </div>
             </div>
             <div class="w3-card">
-                <img src="cursor_new.png" alt="Person">
+                <img src="assets/img/cursor_new.png" alt="Person">
                 <div class="w3-container">
                     <h4><b>Neu</b></h4>
-                    <p>Großer, gut erkennbarer Cursor</p>
                 </div>
             </div>
         </div>
@@ -791,10 +777,9 @@
             VErhalten ist durch die <span class="code">event-set</span>-Komponente realisiert.</p>
         <div class="before-after">
             <div class="w3-card">
-                <img src="cursor_hover.png" alt="Person">
+                <img src="assets/img/cursor_hover.png" alt="Person">
                 <div class="w3-container">
                     <h4><b>Hover-Effekt</b></h4>
-                    <p>Cursor verändert beim Hovern seine Aussehen</p>
                 </div>
             </div>
         </div>
@@ -804,23 +789,126 @@
             aAnimation dauert so lange wie ein Hovern als Klick erkannt wird, nämlich 1,5 Sekunden.</p>
         <h4>Auditives Feedback</h4>
         <p id="info">Die Verkleinerung des Cursors wird duch ein Geräuch untersützt. Daduch hat der Nutzer zwei Elemente
-            an welchen er sich orientieren kann, dass gleich ein Klick ausgeführt wird. Dieser Sound ist ebenso 1,5 Sekunden lang.</p>
+            an welchen er sich orientieren kann, dass gleich ein Klick ausgeführt wird. Dieser Sound ist ebenso 1,5
+            Sekunden lang.</p>
         <div class="before-after">
             <div class="w3-card">
                 <audio controls volume="0.3">
-                    <source src="hover_sound.mp3" type="audio/mpeg">
+                    <source src="assets/sound/hover_sound.mp3" type="audio/mpeg">
                 </audio>
                 <div class="w3-container">
                     <h4><b>Hover Sound</b></h4>
                 </div>
             </div>
         </div>
+
+        <h3>3.4. Welcome Screen</h3>
+        <p id="info">Der Welcome Screen soll ein Tutorial sein, damit Nutzer, welche die Anwendung noch nicht kennen,
+            sich
+            in dieser zurecht finden. <br>
+            Somit machte ich mir Gedanken und bin zum Entschluss gekommen, den Welcome Screen zu einem Interactiven
+            Tutorial
+            zu machen. Dieses Tutorial besteht aus zwei Screens</p>
+        <h4>Screen 1</h4>
+        <p id="info">Dieser Screen ist direkt in dem Sichtfeld des Nutzers, wenn dieser die Anwenung startet. Hier
+            bekommt
+            er die Information, dass er zum Umscheien seinen Kopf bewegen muss. Unterstützt wird dies durch ein Icon.
+            <br>
+            Zusätzlich gint es einen Hinweis, dass hinter dem Nutzer die das Tutorial fortgesetzt wird. Er gelangt zum
+            zweiten Screen.</p>
+        <div class="before-after">
+            <div class="w3-card">
+                <img src="assets/img/intro-screen1.png" alt="Person">
+                <div class="w3-container">
+                    <h4><b>Tutoial Screen 2</b></h4>
+                </div>
+            </div>
+        </div>
+
+        <h4>Screen 2</h4>
+        <p id="info">Hier erfährt der Nutzer, wie der mit Elementen interagieren kann. Es wird erklärt, dass Elemente
+            mit
+            einem eplsierenden Auge interagierbar sind. Außerdem wird klar gemacht, dass es nicht genügt, mit den
+            eigenen
+            Augen auf das Element zu schauen. Stattdessen muss man Den Ring in der Mittdes Bildes duch Kopfbewegungen
+            auf
+            das Element richten. Dies ist vor Allem für Nutzer wichtig, die zuvor noch nie mit einer VR-Anwendung in
+            Berührung gekommen sind.<br>
+            Des Weitern wird noch erklärt, wie ein "Klick" funktioniert.</p>
+        <p id="info">Dieses Wissen kann der Nutzer sofort anwenden, indem er auf den daunterliegenen Play-Button klickt
+        </p>
+        <div class="before-after">
+            <div class="w3-card">
+                <img src="assets/img/intro-screen2.png" alt="Person">
+                <div class="w3-container">
+                    <h4><b>Tutoial Screen 2</b></h4>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="probleme" class="w3-container city w3-animate-opacity" style="display:none">
+        <h2>4. Probleme</h2>
+        <p id="info">Einige Dinge konnte ich leider nicht beheben, da mit die Zeit gefehlt hat mich tiefer in A-Frame
+            einarbeiten zu können. Dies bedauere ich sehr. Diese Probleme sind:</p>
+
+        <div class="explenations">
+            <div class="explenation-element">
+                <div class="element">
+                    <p>Klickanimation</p>
+                </div>
+                <div class="explenation">
+                    <p>Die Klickanimation ist zwar implementert. Sie wird aber noch bis zum Ende diese Ausgeführt, auch
+                        wenn der Nutzer schon nicht mehr aüber einem klickbaren Element hovert. Der Nutzer wird daduch
+                        verwirrt. <br>
+                        Diesen Problem stufe ich in Stufe 4 ein. Es muss also schnellstmöglich mit höchster Priorität
+                        behoben werden.</p>
+                </div>
+            </div>
+            <div class="explenation-element">
+                <div class="element">
+                    <p>Notizen werden vergrößert obwohl ein anderes Element darüber liegt</p>
+                </div>
+                <div class="explenation">
+                    <p>Liegt unter einer vergrößerten Notiz ein weiteres interagierbares Element, so wird mit diesem
+                        interagiert (visueller und auditiver Hovereffekt treten auf). Daduch kan es passieren, dass
+                        mehrere Notizen gelichzeitig vergrößert sind. Dies ist keine schöne User Experiance. <br>
+                        Dieses Pränomen tritt auf, obwohl ich alle andern Interaktionelemete mit <span
+                            class="code">visible="flase"</span> ausblenden lasse, wenn eine Notiz vergrößert ist.
+                        Scheinbar wird nur die Deckkraft heruntergestellt und nicht das Element aus der Szene entfernt.
+                        <br>
+                        Diesen Problem weise ich der Stufe 3 zu.
+                    </p>
+                </div>
+            </div>
+            <div class="explenation-element">
+                <div class="element">
+                    <p>Konsequente Interaktion nur auf Auge</p>
+                </div>
+                <div class="explenation">
+                    <p>Möchte der Nutzer mit eineme Element interagieren, so muss dieser auf das pulsierende Auge
+                        schauen. Denn nur hier funktioniert die Interaktion konsequent. Dass der Nutzer wird auf das
+                        Auge zur Interaktion scheien muss, wird ihm auch im Tutorial erklärt. <br>
+                        Schaut er stattdessen auf z.B. den Play-Button, funktioniert Animation und Klick nur manchmal. Dieses verhalten wäre aber viel natürlicher. <br>
+                        Ich habe einiges versucht, um dieses Verhalten zu erlangen. Leider ist mir das nicht gelungen. <br>
+                        Diesen Problem gehört der Stufe 2 an, da der Nutzer weiß, wie er dieses umgehen kann.
+                    </p>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <section id="prototyp" class="w3-container city w3-animate-opacity" style="display:none">
-        <h2>Prototpy</h2>
+        <h2>5. Prototpy</h2>
+        <div class="w3-panel w3-pale-red w3-leftbar w3-border-red">
+            <p>Sollte der Prototyp nicht funktionieren, muss die Seite neugeladen werden. Dies muss bis zu 10 Mal
+                wiederholt werden.</p>
+            <p>Bei mir funktionierte der die Anwenung <strong>am besten in Firefox</strong>. Sie läuft aber auch auf
+                allen anderen modernen und gängigen Browsern.</p>
+        </div>
     </section>
-
 
 </body>
 <footer></footer>
