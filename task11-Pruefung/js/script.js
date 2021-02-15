@@ -52,13 +52,15 @@ function leave_note(note) {
     }, 550);
 }
 
-var audio = document.getElementById('hoverSound');
+;
 function playHoverSound() {
+    var audio = document.getElementById('hoverSound')
     console.log('play')
     audio.play();
     audio.volume = 0.05;
 }
 function stopHoverSound() {
+    var audio = document.getElementById('hoverSound')
     console.log('stop')
-    audio.stop();
+    audio.load();
 }

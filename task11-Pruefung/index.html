@@ -15,7 +15,7 @@
         <source src="assets/sound/hover_sound.mp3" type="audio/mpeg">
       </audio>
       
-    <a-scene antialias="true">        
+    <a-scene>        
         <a-assets>
             <img src="assets/img/play.png" alt="" id="play">
             <img src="assets/img/pause.png" alt="" id="pause">
@@ -89,20 +89,22 @@
                     align="center" 
                     position="0 1.5 0">
                 </a-text>
-                <a-text value="Du kannst mit einem Element interagieren, indem du den Punkt in der Mitte des Bildschirms durch Kopfbewegungen auf das Element richtest." 
+                <a-text value="Du kannst mit einem Element interagieren, indem du den Punkt in der Mitte des Bildschirms durch Kopfbewegungen auf das pulsierende Auge richtest." 
                     color="black" 
                     align="center" 
                     position="0 0.5 0">
                 </a-text>
-                <a-text value="Wenn du 1,5 Sekunden auf eine Element schaust, klickst du es an." 
+                <a-text value="Wenn du 1,5 Sekunden auf das Auge schaust, klickst du das Element an." 
                     color="black" 
                     align="center" 
                     position="0 -0.5 0">
                 </a-text>
                 <a-entity position="0 -1 0.2" 
                     onmouseenter="playHoverSound()"
+                    onmouseleave="stopHoverSound()"
                     event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
                     event-set__hover-leave="scale: 1 1; _event: mouseleave; _target: #cursor-border" 
+                    event-set__hover-leave-somplete-cursor="scale: 1 1; _event: mouseleave; _target: #cursor"
                     play>
                     <a-image class="cursor-proxy hover-effect" 
                         id="startControl" 
@@ -115,7 +117,8 @@
                         position="0 0.1 0.1"
                         animation__eye_pulse="property: scale; to: 0.2 0.2; loop: true; dur: 700; dir: alternate; easing: easeInOutQuad;"
                         event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
-                        event-set__hover-leave="scale: 1 1; _event: mouseleave; _target: #cursor-border">
+                        event-set__hover-leave="scale: 1 1; _event: mouseleave; _target: #cursor-border"
+                        event-set__hover-leave-somplete-cursor="scale: 1 1; _event: mouseleave; _target: #cursor">
                     </a-image>
                 </a-entity>
             </a-entity>
@@ -123,17 +126,29 @@
 
 
         <a-entity id="timeElement" rotation="0 45 0" position="-2.7 0.3 -2" visible="false">
-            <a-image class="cursor-proxy" 
-                id="videoControls" 
-                src="#pause" 
-                position="0 0 0" 
-                scale="0.4 0.4" 
-                play-pause 
-                visible="false" 
+            <a-entity position="0 0 0.2" 
                 onmouseenter="playHoverSound()"
+                onmouseleave="stopHoverSound()"
                 event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
-                event-set__hover-leave="scale: 1 1; _event: mouseleave; _target: #cursor-border">
-            </a-image>
+                event-set__hover-leave="scale: 1 1; _event: mouseleave; _target: #cursor-border"
+                play-pause>
+                <a-image class="cursor-proxy hover-effect" 
+                    id="videoControls" 
+                    src="#pause" 
+                    scale="0.4 0.4"
+                    position="0 0 0" 
+                    scale="0.4 0.4" >
+                </a-image>
+                <a-image class="eye"
+                    src="#eye_white_asset" 
+                    scale="0.1 0.1"
+                    position="0 0.1 0.1"
+                    animation__eye_pulse="property: scale; to: 0.2 0.2; loop: true; dur: 700; dir: alternate; easing: easeInOutQuad;"
+                    event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
+                    event-set__hover-leave="scale: 1 1; _event: mouseleave; _target: #cursor-border">
+                </a-image>
+            </a-entity>
+           
             <a-text id="currentTime" width="6" position="0.3 0 0" scale="0.8 0.8" color="black">
             </a-text>
         </a-entity>
@@ -142,11 +157,11 @@
 
         <a-entity id="formate_beibehalten"
             position="-3.6 1.9 -5" 
-            rotation="0 30 0">
+            rotation="0 30 0"
+            visible="true">
             <a-entity id="note1" onmouseleave="leave_note(this)"
                 scale="0 0"
                 class="plane_with_text hover-effect"
-                visible="true"
                 geometry="primitive: plane; height: auto; width: auto"
                 material="color: #ee8fa8"
                 position="0 0 -1"
@@ -156,7 +171,7 @@
                 event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
                 event-set__hover-leave="scale: 1 1; _event: mouseleave; _target: #cursor-border">
             </a-entity>
-            <a-image class="eye cursor-proxy hover-effect" onclick="clicked_eye(this)" onmouseenter="playHoverSound()"
+            <a-image class="eye cursor-proxy hover-effect" onclick="clicked_eye(this)" onmouseenter="playHoverSound()" onmouseleave="stopHoverSound()"
                 src="#eye_asset" 
                 scale="0.3 0.3"
                 position="0 0 0.5"
@@ -170,11 +185,11 @@
 
         <a-entity id="rausch"
             position="-3.6 1.5 -5" 
-            rotation="0 30 0">
+            rotation="0 30 0"
+            visible="false">
             <a-entity id="note2" onmouseleave="leave_note(this)"
                 scale="0 0"
                 class="plane_with_text hover-effect"
-                visible="true"
                 geometry="primitive: plane; height: auto; width: auto"
                 material="color: #ee8fa8"
                 position="0 0 -1"
@@ -184,7 +199,7 @@
                 event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
                 event-set__hover-leave="scale: 1 1; _event: mouseleave; _target: #cursor-border">
             </a-entity>
-            <a-image class="eye cursor-proxy hover-effect" onclick="clicked_eye(this)" onmouseenter="playHoverSound()"
+            <a-image class="eye cursor-proxy hover-effect" onclick="clicked_eye(this)" onmouseenter="playHoverSound()" onmouseleave="stopHoverSound()"
                     src="#eye_asset" 
                     scale="0.3 0.3"
                     position="0 0 0.5"
@@ -198,14 +213,14 @@
 
         <a-entity id="familie"
             position="-6.5 1.6 -5" 
-            rotation="0 30 0">
+            rotation="0 30 0"
+            visible="true">
             <a-entity id="note3" onmouseleave="leave_note(this)"
                 scale="0 0"
                 class="plane_with_text hover-effect"
-                visible="true"
                 geometry="primitive: plane; height: auto; width: auto"
                 material="color: #ee8fa8"
-                position="0 0 -1"
+                position="0 0 -0.01"
                 schader="flat"
                 text="value: Zeit fuer die Familie; width: 2; color: black; align: center; wrapCount: 10;"
                 event-set__enter-color="material.opacity: 1; _event: mouseenter; _target: #cursor"
@@ -214,7 +229,7 @@
                 event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
                 event-set__hover-leave="scale: 1 1; _event: mouseleave; _target: #cursor-border">
             </a-entity>
-            <a-image class="eye cursor-proxy hover-effect" onclick="clicked_eye(this)" onmouseenter="playHoverSound()" onmouseout="stopHoverSound()"
+            <a-image class="eye cursor-proxy hover-effect" onclick="clicked_eye(this)" onmouseenter="playHoverSound()" onmouseleave="stopHoverSound()"
                     src="#eye_asset" 
                     scale="0.5 0.5"
                     position="0 0 0.5"
