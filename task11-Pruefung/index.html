@@ -5,21 +5,26 @@
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-proxy-event-component/dist/aframe-proxy-event-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-svg-extruder@1.0.0/dist/index.min.js"></script>
+
+
 </head>
 
 <body>
     <audio id="hoverSound" preload="auto" volume="0.3">
-        <source src="assets/hover_sound.mp3" type="audio/mpeg">
+        <source src="assets/sound/hover_sound.mp3" type="audio/mpeg">
       </audio>
       
-    <a-scene>        
+    <a-scene antialias="true">        
         <a-assets>
-            <img src="assets/play.png" alt="" id="play">
-            <img src="assets/pause.png" alt="" id="pause">
-            <video src="assets/video_Snippet.mp4" id="video"></video>
-            <img src="assets/eye.png" alt="" id="eye_asset">
-            <img src="assets/play_white.png" alt="" id="play_white_asset">
+            <img src="assets/img/play.png" alt="" id="play">
+            <img src="assets/img/pause.png" alt="" id="pause">
+            <video src="assets/vid/video_Snippet.mp4" id="video"></video>
+            <img src="assets/img/eye.png" alt="" id="eye_asset">
+            <img src="assets/img/eye_white.png" alt="" id="eye_white_asset">
+            <img src="assets/img/play_white.png" alt="" id="play_white_asset">
         </a-assets>
+        <a-asset-item id="move_head-asset" src="assets/img/move_head.svg"></a-asset-item>
 
         <a-camera wasd-controls-enabled="false">
             <a-entity id="cursor"
@@ -38,7 +43,7 @@
                         position="0 0 -0.1"
                         radius-inner="0.008"
                         radius-outer="0.03">
-                </a-ring>
+                    </a-ring>
                 </a-ring>
                 
             </a-entity>
@@ -48,27 +53,76 @@
 
         <a-sky id="video-sky" src="#video" rotation="0 90 0" visible="false"></a-sky>
 
-        <a-entity id="welcome" position="0 1.8 -2">
+        <a-entity id="welcome" position="0 1.6 0">
             <a-sky color="white"></a-sky>
 
-            <a-plane color="yellow" width="6" height="2" opacity="0.3">
-            <a-text value="Look for 1.5 seconds at the play button to start the video." color="white" align="center">
-            </a-text>
-            <a-image class="cursor-proxy hover-effect" 
-                id="startControl" 
-                src="#play_white_asset" 
-                position="0 -0.5 0.2" 
-                scale="0.4 0.4" 
-                play 
-                onmouseenter="playHoverSound()"
-                event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
-                event-set__hover-leave="scale: 1 1; _event: mouseleave; _target: #cursor-border">
-            </a-image>
-        </a-plane>
+            <a-entity id="intro01"  position="0 0 -2">
+                <a-plane position="0 0 -0.1"
+                    color="white"
+                    width="10"
+                    height="3"></a-plane>
+                <a-text value="Herzlich Willkommen bei der Interaktiven Gespraechsunde!" 
+                    color="black" 
+                    align="center"
+                    position="0 1 0">
+                </a-text>
+                <a-text value="Zum Umschauen, bewege deinen Kopf." 
+                    color="black" 
+                    align="center"
+                    position="0 0 0">
+                </a-text>
+                <a-image src="assets/img/move_head.png" position="0 -0.8 0"></a-image>
+                <a-text value="Weiter geht's hinter dir!" 
+                    color="black" 
+                    align="center"
+                    scale="0.5 0.5"
+                    position="1.5 -0.7 0">
+                </a-text>
+            </a-entity>
+
+            
+            <a-entity id="intro02"
+                position="0 0 3"
+                rotation="0 180 0">
+                <a-text value="Alle Elemente, mit denen du interagieren kannst, sind mit einem pulsierenden Auge gekennzeichnet. " 
+                    color="black" 
+                    align="center" 
+                    position="0 1.5 0">
+                </a-text>
+                <a-text value="Du kannst mit einem Element interagieren, indem du den Punkt in der Mitte des Bildschirms durch Kopfbewegungen auf das Element richtest." 
+                    color="black" 
+                    align="center" 
+                    position="0 0.5 0">
+                </a-text>
+                <a-text value="Wenn du 1,5 Sekunden auf eine Element schaust, klickst du es an." 
+                    color="black" 
+                    align="center" 
+                    position="0 -0.5 0">
+                </a-text>
+                <a-entity position="0 -1 0.2" 
+                    onmouseenter="playHoverSound()"
+                    event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
+                    event-set__hover-leave="scale: 1 1; _event: mouseleave; _target: #cursor-border" 
+                    play>
+                    <a-image class="cursor-proxy hover-effect" 
+                        id="startControl" 
+                        src="#play" 
+                        scale="0.4 0.4">
+                    </a-image>
+                    <a-image class="eye hover-effect"
+                        src="#eye_white_asset" 
+                        scale="0.1 0.1"
+                        position="0 0.1 0.1"
+                        animation__eye_pulse="property: scale; to: 0.2 0.2; loop: true; dur: 700; dir: alternate; easing: easeInOutQuad;"
+                        event-set__hover-enter="scale: 1.2 1.2; _event: mouseenter; _target: #cursor-border"
+                        event-set__hover-leave="scale: 1 1; _event: mouseleave; _target: #cursor-border">
+                    </a-image>
+                </a-entity>
+            </a-entity>
         </a-entity>
 
 
-        <a-entity id="timeElement" rotation="0 45 0" position="-2.7 0.3 -2">
+        <a-entity id="timeElement" rotation="0 45 0" position="-2.7 0.3 -2" visible="false">
             <a-image class="cursor-proxy" 
                 id="videoControls" 
                 src="#pause" 
@@ -201,6 +255,7 @@
                         document.getElementById('cursor-border').setAttribute('scale','1 1')
                         videoControls.setAttribute('visible', 'true');
                         document.getElementById('video-sky').setAttribute('visible', 'true');
+                        document.getElementById('timeElement').setAttribute('visible', 'true');
                     }
                 });
             }
