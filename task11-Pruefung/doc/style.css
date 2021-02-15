@@ -82,6 +82,11 @@ section{
     align-items: center;
 }
 
+#task01 img{
+    width: 100%;
+    max-width: 1500px;
+}
+
 .interaktionsschritt{
     width: 100%;
     background:none;
