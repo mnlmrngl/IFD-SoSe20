@@ -21,4 +21,5 @@ function openLink(evt, animName) {
     }
     document.getElementById(animName).style.display = "block";
     evt.currentTarget.className += " w3-red";
+    window.scrollTo(0, 0);
   }
